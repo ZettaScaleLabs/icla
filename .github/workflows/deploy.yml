@@ -24,4 +24,4 @@ jobs:
                 /gists/${GIST_ID} \
                 --input input-file.json
             env:
-                GIST_ID: ${{ secrets.GIST_ID }}
+                GIST_ID: ${{ secrets.ZETTASCALE_BOT_ICLA_GIST_ID }}
