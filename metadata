@@ -34,5 +34,9 @@
             ]
         },
         "required": true
+    },
+    "Employer": {
+        "title": "Employer Name",
+        "type": "sring"
     }
 }
