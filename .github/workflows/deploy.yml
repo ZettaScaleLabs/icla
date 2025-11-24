@@ -25,4 +25,4 @@ jobs:
                 --input input-file.json
             env:
                 GIST_ID: ${{ secrets.ZETTASCALE_BOT_ICLA_GIST_ID }}
-                GITHUB_TOKEN: ${{ secrets.ZETTASCALE_BOT_PERSONAL_ACCESS_TOKEN}}
+                GITHUB_TOKEN: ${{ secrets.ZETTASCALE_BOT_PERSONAL_ACCESS_TOKEN }}
