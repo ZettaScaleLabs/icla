@@ -1,0 +1,27 @@
+name: Deploy license to gist
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v6
+          - name: Deploy ZettaScale ICLA to Gist
+            run: |
+                ICLA_CONTENT=$(cat 2025.11.41-ZS-ICLA.md)
+                METADATA_CONTENT=$(cat metadata)
+                cat gist-input-template.json | jq '.[][] |= ( ltrimstr("${") | rtrimstr("}") | $ENV[.] )' > input-file.json 
+
+                echo "Deploying ICLA to Gist..."
+                gh api \
+                --method PATCH \
+                -H "Accept: application/vnd.github+json" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                /gists/${GIST_ID} \
+                --input input-file.json
+            env:
+                GIST_ID: ${{ secrets.GIST_ID }}
