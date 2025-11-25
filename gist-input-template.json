@@ -1,8 +1,10 @@
 {
-    "2025.11.41-ZS-ICLA.md": {
-        "content": "${ICLA_CONTENT}"
-    },
-    "metadata": {
-        "content": "${METADATA_CONTENT}"
+    "files": {
+        "2025.11.41-ZS-ICLA.md": {
+            "content": "${ICLA_CONTENT}"
+        },
+        "metadata": {
+            "content": "${METADATA_CONTENT}"
+        }
     }
 }
